@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
+const authRoutes = require("./routes/auth");
 
 const PORT = process.env.PORT;
 
@@ -14,7 +15,8 @@ app.use(bodyParser.json()); //we are using .json() since we are building an api
 
 
 /* ROUTES */
-
+// auth routes
+app.use("/api/auth", authRoutes);
 
 /* Error Handling */
 app.use(function(req, res, next){
