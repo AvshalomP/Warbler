@@ -9,7 +9,7 @@ exports.signup = async function(req, res, next){
         let user = await db.User.create(req.body);
         let { id, username, profileImgUrl} = user;
         // create a token (assigning a token)
-        let token = jwt.sign({      //jwt.sign(<payload>,<privateKey>)
+        let token = jwt.sign({      //jwt.sign(<payload>, <privateKey>)
                 id,
                 username,
                 profileImgUrl
@@ -23,7 +23,7 @@ exports.signup = async function(req, res, next){
             token
         })
     } catch (err) {
-        //if a mongoose validation fails - meaning we fail to create that user
+        //if a mongoose validation fails - meaning if req.body fail to obey the 'unique' field of the User model
         if(err.code === 11000){
             err.message = "Sorry, that username and/or email is taken";
         }
