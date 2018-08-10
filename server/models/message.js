@@ -2,18 +2,23 @@ const mongoose = require("mongoose");
 const User = require("./user");
 
 
-const messageSchema = mongoose.Schema({
-    text: {
-       type: String,
-       required: true,
-       maxLength: 160   //160 chars
+const messageSchema = mongoose.Schema(
+    {
+        text: {
+            type: String,
+            required: true,
+            maxLength: 160   //160 chars
+        },
+        //reference to user
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"     //has to match the User model name
+        }
     },
-    //reference to user
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"     //has to match the User model name
+    {
+        timestamps: true
     }
-});
+);
 
 //this will remove the message from the messages list in user first and then will continue with next() to remove the message itserlf from the db
 messageSchema.pre('remove', async function(next){

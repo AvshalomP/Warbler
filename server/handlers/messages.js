@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 
-//create a message
+//POST /api/users/:id/messages - create a message
 exports.createMessage = async function(req, res, next){
     try {
         //create the message in db
@@ -29,18 +29,21 @@ exports.createMessage = async function(req, res, next){
     }
 };
 
-//get a message
+//GET /api/users/:id/messages/:message_id - get a message
 exports.getMessage = async function(req, res, next){
     try {
-
+        let message = await db.Message.findById(req.params.message_id); // api/users/:id/messages/:message_id
+        return res.status(200).json(message);
     } catch (err) {
         return next(err);
     }
 };
 
-//delete a message
+//DELETE /api/users/:id/messages/:message - delete a message
 exports.deleteMessage = async function(req, res, next){
     try {
+        let foundMessage = await db.Message.findById(req.params.message_id);
+        await foundMessage.remove(); //this is the pre hook method we created
 
     } catch (err) {
         return next(err);

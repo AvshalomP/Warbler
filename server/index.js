@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const messagesRoute = require("./routes/messages");
-const { loginRequire, ensureCorrectUser } = require("./middleware/auth");
+const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 
 const PORT = process.env.PORT;
 
@@ -21,10 +21,28 @@ app.use(bodyParser.json()); //we are using .json() since we are building an api
 app.use("/api/auth", authRoutes);
 // message routes
 app.use("/api/users/:id/messages",
-    loginRequire,
+    loginRequired,
     ensureCorrectUser,
     messagesRoute
 );
+//get all messages
+app.use("/api/messages", loginRequired, async function(req, res, next){
+   try{
+       //find all messages
+       let messages = await db.Message.find()   // find all messages
+           .sort({ createdAt: "desc" })         // sort them by time created (descending)
+           .populate({                          // grab from each user: username and profileImgUrl
+               username: true,
+               profileImgUrl: true
+           });
+
+       //send all messages
+       return res.status(200).json(messages);
+
+   } catch(err){
+       return next(err);
+   }
+});
 
 /* Error Handling */
 app.use(function(req, res, next){

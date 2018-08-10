@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 
 //make sure the user is logged in (when doing certain activity) - Authentication
-exports.loginRequire = function(req, res, next){
+exports.loginRequired = function(req, res, next){
     try {
         //get token
         const token = req.headers.authorization.split(" ")[1]; //if user is logged the token will be available on 'authorization'
