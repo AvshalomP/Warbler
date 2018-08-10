@@ -11,7 +11,6 @@ exports.signin = async function(req, res, next){
         let { id, username, profileImgUrl } = user;
         //authenticating user password
         let isMatch = await user.comparePassword(req.body.password); //will hash the password entered and compare it with the one saved in our db
-        console.log(isMatch);
         if(isMatch){    //if password is correct we want to return a token back (for kipping user logged on)
             let token = jwt.sign({
                 id,
