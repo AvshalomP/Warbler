@@ -22,10 +22,10 @@ describe("auth route", () => {
             })
          });
 
-        it("should return status code 200", () => {
+        test("should return status code 200", () => {
             expect(data.status).toBe(200);
         });
-        it("should return object containing {username, password, email}", () => {
+        test("should return object containing {username, password, email}", () => {
             let hasAllProperties = true;
             let properties = ["id", "username", "token"];
             properties.forEach((key) => {

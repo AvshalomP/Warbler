@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-init": "./node_modules/jasmine/bin/jasmine.js init",
-    "test": "jasmine"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +20,6 @@
     "request": "^2.87.0"
   },
   "devDependencies": {
-    "jasmine": "^3.1.0"
+    "jest": "^23.5.0"
   }
 }
