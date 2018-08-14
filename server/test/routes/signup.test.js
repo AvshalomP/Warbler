@@ -7,10 +7,10 @@ describe("auth route", () => {
             //_removeTestUSerFromDb({username: 'test'});
             done();
         });
-        //test signup
+        //test user signup
         test("should return object containing {id, token, username}", async () => {
             try {
-
+                //make signup request
                 let respBody = await _postSignup();
                 let properties = ["id", "username", "token"];
                 let hasAllProperties = _propertiesExist(respBody, properties);
@@ -25,9 +25,10 @@ describe("auth route", () => {
         //test signup with existing user
         test("should return user already taken message", async () => {
             try {
+                //make signup request
                 let respBody = await _postSignup();
                 expect(respBody.error).not.toBeUndefined();
-            } catch(err) {
+            } catch(err) {  //should reach catch
                 //assert
                 expect(err.error.message).toBe("Sorry, that username and/or email is taken");
             }
