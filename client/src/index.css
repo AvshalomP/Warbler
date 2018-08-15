@@ -33,3 +33,29 @@ ul.nav.navbar-nav li {
 .onboarding > .navbar {
     background-image: url("./images/nav-bg.png");
 }
+
+
+/* Homepage*/
+.home-hero {
+    width: 100vw;
+    height: 100vh;
+    /* Position all the homepage content at the top lef corner of the page */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Text style */
+    color: white;
+    text-shadow: 0 0 8px #66757f;
+    text-align: center;
+    /* Cover image style */
+    background-image: url("./images/signed-out-home.jpg");
+    z-index: -1; /*sanding to background - so it won't cover the navbar*/
+    background-position: center center; /* X Y position*/
+    background-size: cover;
+}
