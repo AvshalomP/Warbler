@@ -35,6 +35,16 @@ export function setCurrentUser(user) {
 //     };
 // }
 
+//middleware - logout
+export function logout(){
+    return dispatch => {
+        //clear local storage (that stores 'token') TODO: need to clear only 'token' in case we are storing more things
+        localStorage.clear();
+        //set current user to be empty
+        dispatch(setCurrentUser({}));
+    }
+}
+
 //middleware function - without promise wrapping
 export function authUser(type, userData){
     return dispatch => {
