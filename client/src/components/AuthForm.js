@@ -23,8 +23,12 @@ class AuthForm extends Component {
         const authType = this.props.signUp ? "signup" : "signin";
         this.props.onAuth(authType, this.state)
             .then(() => {
-                console.log("Logged in successfully")
+                console.log("Logged in successfully");
+                this.props.history.push("/");
             })
+            .catch( err => {
+                return;
+            });
     };
 
     render(){
