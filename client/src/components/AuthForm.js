@@ -29,7 +29,12 @@ class AuthForm extends Component {
 
     render(){
         const {email, username, password, profileImgUrl} = this.state;
-        const {buttonText, heading, signUp} = this.props;
+        const {buttonText, heading, signUp, errors, history, removeError } = this.props;
+
+        //removing previous error messages
+        history.listen(() => {
+            removeError();
+        });
 
         return (
             <div>
@@ -37,6 +42,9 @@ class AuthForm extends Component {
                     <div className="col-md-6">
                         <form onSubmit={this.handleSubmit} >
                             <h2>{heading}</h2>
+                            { errors.message &&
+                                <div className="alert alert-danger">{errors.message}</div>
+                            }
                             <label htmlFor="email">Email:</label>
                             <input type="text" className="form-control" id="email" name="email"
                                    onChange={this.handleChange} value={email}/>

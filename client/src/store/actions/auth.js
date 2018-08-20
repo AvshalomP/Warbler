@@ -1,5 +1,6 @@
-import { apiCall } from '../../services/api';
-import { SET_CURRENT_USER } from '../actionTypes';
+import { apiCall } from "../../services/api";
+import { SET_CURRENT_USER } from "../actionTypes";
+import { addError, removeError } from "./errors";
 
 //action creator
 export function setCurrentUser(user) {
@@ -21,9 +22,12 @@ export function setCurrentUser(user) {
 //                         localStorage.setItem("jwtToken", token);
 //                         //dispatching action
 //                         dispatch(setCurrentUser(user));
+//                         dispatch(removeError());
 //                         resolve();  //indicate that the API call is successful
 //                     })
 //                     .catch( err => {
+//                         console.log("INNNNNNN catcg");
+//                         dispatch(addError(err.message));
 //                         console.log(err);
 //                         reject();   //indicate that the API call failed
 //                     });
@@ -42,9 +46,11 @@ export function authUser(type, userData){
                     localStorage.setItem("jwtToken", token);
                     //dispatching action to set current user
                     dispatch(setCurrentUser(user));
+                    //remove previous errors
+                    dispatch(removeError());
                 })
                 .catch( err => {
-                    console.log(err);
+                    dispatch(addError(err.message));
                 });
     };
 }
