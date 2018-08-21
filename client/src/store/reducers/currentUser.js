@@ -10,7 +10,7 @@ export default (state = DEFAULT_STATE, action) => {
     switch (action.type){
         case SET_CURRENT_USER:
             return {
-                // if the are keys in action.user object make true else false
+                // if there are keys in action.user object make true else false
                 isAuthenticated: Object.keys(action.user).length > 0,
                 user: action.user
             };
