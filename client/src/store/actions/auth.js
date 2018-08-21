@@ -32,7 +32,7 @@ export function authUser(type, userData){
     return dispatch => {
         // wrap our thunk with a promise, so we can wait for the API call
         return new Promise((resolve, reject) => {
-            return apiCall("post", `/api/auth/${type}`, userData)
+            return apiCall("POST", `/api/auth/${type}`, userData)
                     .then(({token, ...user}) => {   // here we destructure from the AJAX response the token and wrap
                                                     //-> the rest of the returned properties (id & username) in user object
                         //storing token in local storage
