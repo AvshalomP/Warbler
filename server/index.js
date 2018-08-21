@@ -8,6 +8,7 @@ const authRoutes = require("./routes/auth");
 const messagesRoute = require("./routes/messages");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 
+const db = require("./models");
 const PORT = process.env.PORT;
 
 
@@ -31,7 +32,7 @@ app.use("/api/messages", loginRequired, async function(req, res, next){
        //find all messages
        let messages = await db.Message.find()   // find all messages
            .sort({ createdAt: "desc" })         // sort them by time created (descending)
-           .populate({                          // grab from each user: username and profileImgUrl
+           .populate("user", {                          // grab from each user: username and profileImgUrl
                username: true,
                profileImgUrl: true
            });
