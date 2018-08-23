@@ -32,6 +32,7 @@ ul.nav.navbar-nav li {
 
 .onboarding > .navbar {
     background-image: url("./images/nav-bg.png");
+    background-size: 100% 100%;
 }
 
 
@@ -47,8 +48,8 @@ ul.nav.navbar-nav li {
     /* Flexbox */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     /* Text style */
     color: white;
     text-shadow: 0 0 8px #66757f;
@@ -69,4 +70,24 @@ ul.nav.navbar-nav li {
 /* messages:not(.no-hover) means that messages does NOT have the class of 'no-hover' */
 #messages:not(.no-hover) .list-group-item:hover {
     background-color: #e6ecf0;
+}
+
+.timeline-image {
+    border-radius: 50px;
+    height: 48px;
+    width: 48px;
+    margin: 2px 30px 10px 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+a.btn.btn-danger,
+a.btn.btn-danger:hover {
+    color: white;
+}
+
+#timeline {
+    padding-top: 15px;
 }
