@@ -59,3 +59,14 @@ ul.nav.navbar-nav li {
     background-position: center center; /* X Y position*/
     background-size: cover;
 }
+
+#messages .list-group-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 7px 20px 12px;
+}
+
+/* messages:not(.no-hover) means that messages does NOT have the class of 'no-hover' */
+#messages:not(.no-hover) .list-group-item:hover {
+    background-color: #e6ecf0;
+}

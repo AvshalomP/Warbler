@@ -9,6 +9,7 @@ import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
 import { authUser } from "../store/actions/auth";
 import { removeError } from "../store/actions/errors";
+import withAuth from "../hocs/withAuth";
 
 
 const Main = props => {
@@ -16,19 +17,26 @@ const Main = props => {
     return (
         <div className="container">
             <Switch>
+                {/* INDEX - homepage*/}
                 <Route exact path="/" render={ props => <Homepage currentUser={currentUser} { ...props } /> } />
+                {/* Signin page*/}
                 <Route exact path="/signin" render={ props => {
                         return (<AuthForm   removeError={removeError} errors={errors}
                                             onAuth={authUser} buttonText="Log in"
                                             heading="Welcome Back." { ...props } />)
                     }
                 }/>
+                {/* Signun page*/}
                 <Route exact path="/signup" render={ props => {
                         return (<AuthForm   removeError={removeError} errors={errors}
                                             onAuth={authUser} signUp buttonText="Sign me up!"
                                             heading="Join Warbler today." { ...props } />)
                     }
                 }/>
+                {/* New message page*/}
+                <Route path="/users/:id/messages/new"
+                       component={withAuth(MessageForm)}
+                />
             </Switch>
         </div>
     )

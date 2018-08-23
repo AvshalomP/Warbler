@@ -19,7 +19,10 @@ const Homepage = ({ currentUser }) => {
     // if auth, show message list page
     return (
         <div>
-            <MessageTimeline />
+            <MessageTimeline
+                profileImageUrl={currentUser.user.profileImgUrl}
+                username={currentUser.user.username}
+            />
         </div>
     );
 };
