@@ -14,12 +14,26 @@ export const fetchMessages = () => {
         return apiCall("GET", "/api/messages")
             .then( res => {
                 console.log(res);
-                console.log("IN THEN")
                 dispatch(loadMessages(res))
             })
             .catch( err => {
-                console.log("IN CATCH")
-                dispatch(addError(err.message))
+                dispatch(addError(err.message));
+            });
+    }
+};
+
+export const postNewMessage = (text) => {
+    return (dispatch, getState) => {
+        let { currentUser } = getState();
+        const id = currentUser.user.id;
+        return apiCall("POST", `/api/users/${id}/messages`, { text })
+            .then( res => {
+                return {};  // we are returning an empty object because we don't need to dispatch any action
+                            //-> because when we are going back to the homepage "/" we are loading all the messages of
+                            //-> the current user, thus the new message that we just added to the db will be loaded as well
+            })
+            .catch( err => {
+                dispatch(addError(err.message));
             });
     }
 };
