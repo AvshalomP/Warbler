@@ -4,11 +4,16 @@ import thunk from 'redux-thunk';
 
 
 export function configureStore() {
-    const store = createStore(rootReducer, compose(
-        applyMiddleware(thunk),
-        // redux dev tools
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    ));
+    let getComposeEnhancers = () => {
+        if (window.navigator.userAgent.includes('Chrome')) {
+            return compose(
+                applyMiddleware(thunk)
+                ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            );
+        }
+        return compose(applyMiddleware(thunk) );
+    };
 
+    const store = createStore(rootReducer, getComposeEnhancers() );
     return store;
 }
