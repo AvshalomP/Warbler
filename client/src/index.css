@@ -88,6 +88,11 @@ a.btn.btn-danger:hover {
     color: white;
 }
 
-#timeline {
-    padding-top: 15px;
+button, #timeline, #container {
+    margin-top: 15px;
 }
+
+label {
+    margin-top: 10px;
+}
+
