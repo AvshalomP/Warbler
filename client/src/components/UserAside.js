@@ -1,9 +1,9 @@
 import React from 'react';
-import DefaultProfileImg from "../images/default-profile-image.jpg";
+import DefaultProfileImg from "../images/default-profile-image.png";
 
 
 const UserAside = ({profileImgUrl, username}) => (
-    <aside className="col-sm-2">
+    <aside className="row col-sm-2 justify-content-center">
         <div className="panel panel-default">
             <div className="panel-body">
                 <img src={profileImgUrl || DefaultProfileImg} alt={username}

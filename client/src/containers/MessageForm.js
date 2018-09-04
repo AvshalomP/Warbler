@@ -28,14 +28,14 @@ class MessageForm extends Component {
 
     render(){
         return (
-            <form onSubmit={this.handleNewMessage}>
+            <form onSubmit={this.handleNewMessage} >
                 {this.props.errors.message && (
                     <div className="alert alert-danger">{this.props.errors.message}</div>
                 )}
-                <input type="text" className="form-control" id="message" name="message"
+                <textarea rows="4" className="form-control" id="message" name="message"
                        value={this.state.message} onChange={this.handleChange}
                 />
-                <button type="submit" className="btn btn-success pull-right">Add my message</button>
+                <button type="submit" className="btn btn-success">Add my message</button>
             </form>
         );
     }

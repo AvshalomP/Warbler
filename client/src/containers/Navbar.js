@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from "../store/actions/auth";
-import Logo from '../images/warbler-logo.png';
+import Logo from '../images/warbler-logo.svg';
 
 
 class Navbar extends Component{
@@ -36,6 +36,7 @@ class Navbar extends Component{
                         )
                     }
                 </div>
+                <hr/>
             </nav>
         );
     }
