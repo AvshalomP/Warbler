@@ -6,7 +6,6 @@ import thunk from 'redux-thunk';
 export function configureStore() {
     let getComposeEnhancers = () => {
         if (window.navigator.userAgent.includes('Chrome')) {
-            console.log("CHROME");
             return compose(
                 applyMiddleware(thunk),
                 window.devToolsExtension ? window.devToolsExtension() : f => f

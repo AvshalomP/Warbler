@@ -35,11 +35,11 @@ class MessageForm extends Component {
                             {this.props.errors.message && (
                                 <div className="alert alert-danger">{this.props.errors.message}</div>
                             )}
-                            <h2>What's on your mind?</h2>
+                            <h2 className="title-gen-style">What's on your mind?</h2>
                             <textarea rows="4" className="form-control" id="message" name="message"
                                    value={this.state.message} onChange={this.handleChange}
                             />
-                            <button type="submit" className="btn btn-success">Add my message</button>
+                            <button type="submit" className="btn btn-form-style">Add my message</button>
                         </form>
                     </div>
                 </div>

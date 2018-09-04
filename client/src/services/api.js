@@ -19,7 +19,6 @@ export function apiCall(method, path, data){
                         return resolve(res.data);
                     })
                     .catch( err => {
-                        //console.log(err.response);
                         return reject(err.response.data);
                     });
     });

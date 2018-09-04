@@ -46,7 +46,7 @@ class AuthForm extends Component {
                 <div className="row justify-content-md-center text-center">
                     <div className="col-md-6">
                         <form onSubmit={this.handleSubmit} >
-                            <h2>{heading}</h2>
+                            <h2 className="title-gen-style">{heading}</h2>
                             { errors.message &&
                                 <div className="alert alert-danger">{errors.message}</div>
                             }
@@ -67,7 +67,7 @@ class AuthForm extends Component {
                                            value={profileImgUrl} onChange={this.handleChange}/>
                                 </div>
                             )}
-                            <button type="submit" className="btn btn-primary btn-block btn-lg">{buttonText}</button>
+                            <button type="submit" className="btn btn-md btn-form-style">{buttonText}</button>
                         </form>
                     </div>
                 </div>

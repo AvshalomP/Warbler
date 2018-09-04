@@ -9,9 +9,9 @@ const Homepage = ({ currentUser }) => {
         return (
             <div className="home-hero">
                 <div className="welcome-signup-message">
-                    <h1>What's Happening?</h1>
+                    <h1>What's <br/> Happening?</h1>
                     <h4>New To Warbler?</h4>
-                    <Link to="/signup" className="btn btn-primary">
+                    <Link to="/signup" className="btn">
                         Sign up here
                     </Link>
                 </div>

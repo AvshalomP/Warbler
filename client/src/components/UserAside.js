@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultProfileImg from "../images/default-profile-image.png";
+import DefaultProfileImg from "../images/default-profile-image.jpg";
 
 
 const UserAside = ({profileImgUrl, username}) => (
