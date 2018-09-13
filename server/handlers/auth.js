@@ -5,7 +5,7 @@ exports.signin = async function(req, res, next){
     try {
         //finding a user (based on email)
         let user = await db.User.findOne({
-            email: req.body.email
+            email: req.body.email.toLowerCase()
         });
 
         let { id, username, profileImgUrl } = user;
@@ -40,6 +40,8 @@ exports.signin = async function(req, res, next){
 
 exports.signup = async function(req, res, next){
     try{
+        req.body.email = req.body.email.toLowerCase();
+        console.log(req.body);
         // create a user
         let user = await db.User.create(req.body);
         let { id, username, profileImgUrl} = user;
