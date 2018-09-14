@@ -30,7 +30,7 @@ class MessageForm extends Component {
         return (
             <div>
                 <div className="row justify-content-md-center text-center">
-                    <div className="col-md-6">
+                    <div className="col-lg-6 col-md-8">
                         <form onSubmit={this.handleNewMessage} >
                             {this.props.errors.message && (
                                 <div className="alert alert-danger">{this.props.errors.message}</div>
