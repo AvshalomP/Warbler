@@ -4,9 +4,51 @@
   border-radius: 20px;
   color: $btn-text-color;
   border: none;
-  &:hover {
+  &:not(:disabled):hover {
     cursor: pointer;
     opacity: 0.9;
     color: $btn-text-color;
+  }
+}
+
+// For Button Loader
+.btn-load {
+  position: relative;
+  display: inline-block;
+
+  &.is-loading {
+    &:hover {
+      cursor: no-drop;
+    }
+  }
+
+  &__content {
+    .is-loading & {
+      opacity: 0;
+    }
+  }
+}
+
+.btn-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ffffff80;
+  border-left-color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s;
+  animation: btRotate 0.6s infinite linear;
+}
+
+@keyframes btRotate {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
   }
 }

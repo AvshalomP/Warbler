@@ -37,7 +37,7 @@ class MessageForm extends Component {
                             )}
                             <h2 className="title-gen-style">What's on your mind?</h2>
                             <textarea rows="4" className="form-control" id="message" name="message"
-                                   value={this.state.message} onChange={this.handleChange}
+                                   value={this.state.message} onChange={this.handleChange} required
                             />
                             <button type="submit" className="btn btn-form-style">Add my message</button>
                         </form>

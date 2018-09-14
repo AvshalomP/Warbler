@@ -22,11 +22,21 @@ class MessageList extends Component {
                 isCorrectUser={currentUser === m.user._id}
             />
         ));
+        let loading = (
+                <div className="loader">
+                    <h4>Fetching messages...</h4>
+                    <div id="loader-4">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+        );
         return (
             <div className="row col-lg-8 col-sm-10">
                 <div className="offset-1 col-sm-10">
                     <ul className="list-group" id="messages">
-                        {messageList}
+                        { messageList.length ?  messageList : loading }
                     </ul>
                 </div>
             </div>

@@ -47,7 +47,7 @@ export function authUser(type, userData){
                     })
                     .catch( err => {
                         dispatch(addError(err.message));
-                        //console.log(err.message);
+                        // setTimeout(() => dispatch(removeError()), 2000); //to remove error message after 2sec
                         reject();   //indicate that the API call failed
                     });
         });

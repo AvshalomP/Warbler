@@ -1,6 +1,6 @@
 /* For our routing logic */
 import React from 'react';
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 // we need {Switch, Route, withRouter, Redirect}, to make sure we are correctly
 //-> pass to our components that we can use the react router and so we can
 //-> specify the current Route that we are on as well as Redirect when we need to
