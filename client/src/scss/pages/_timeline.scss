@@ -1,0 +1,23 @@
+
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 7px 20px 12px;
+  margin-top: 5px;
+}
+
+/* messages:not(.no-hover) means that messages does NOT have the class of 'no-hover' */
+#messages:not(.no-hover) .list-group-item:hover {
+  background-color: #e6ecf0;
+}
+
+.timeline-image {
+  border-radius: 50px;
+  height: 48px;
+  width: 48px;
+  margin: 2px 30px 10px 10px;
+}
+
+.img-thumbnail {
+  margin-top: 5px;
+}

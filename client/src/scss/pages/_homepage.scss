@@ -1,0 +1,55 @@
+@import "../utilities/vars";
+@import "../utilities/buttons";
+@import "../responsive";  //responsiveness style
+
+$bg-img-url: "../images/signed-out-home.jpg";
+
+.home-hero {
+  width: 100vw;
+  height: 100vh;
+
+  /* Position homepage content at the top left corner of the page */
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  /* Text style */
+  color: $text-color;
+
+  /* Cover image style */
+  background-image: url($bg-img-url);
+  z-index: -1; /*sending to background - so it won't cover the navbar*/
+  background-position: center center; /* X Y position*/
+  background-size: cover;
+}
+
+.welcome-signup-message {
+  margin-top: 120px;
+  margin-left: 70px;
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: $title-text-color;
+  }
+  h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    color: deeppink;
+
+    margin-top: 25px;
+    margin-bottom: 60px;
+  }
+  .btn {
+    padding: 10px 40px;
+    font-weight: bold;
+    background: $btn-bg-color;
+  }
+}

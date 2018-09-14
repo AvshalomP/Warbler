@@ -1,0 +1,33 @@
+@import "utilities/vars";
+
+$navbar-bg-color: #3E4788;
+
+.navbar {
+  margin-bottom: 4rem;
+  a {
+    font-weight: bold;
+    color: $btn-text-color;
+    margin-right: 10px;
+    &:hover {
+      color: $btn-text-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.navbar-brand > img { /* > is the direct descendant selector */
+  display: inline-block; /* so we can add some width an height */
+  width: 1.5em;
+  border-radius: 2px;
+  margin: 5px 15px;
+}
+
+ul.nav.navbar-nav li {
+  margin: 0 0.5rem;
+}
+
+.onboarding > .navbar {
+  padding: 0;
+  background: $navbar-bg-color;
+}

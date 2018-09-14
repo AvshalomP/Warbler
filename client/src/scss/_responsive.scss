@@ -1,0 +1,21 @@
+/* Mid */
+@media only screen and (max-width: 1100px) {
+  .home-hero {
+    background-attachment: fixed;
+    background-position: unset;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 450px) {
+  .welcome-signup-message {
+    margin-top: 120px;
+    margin-left: 30px;
+    h1 {
+      font-size: 40px;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+  }
+}

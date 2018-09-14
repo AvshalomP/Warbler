@@ -1,0 +1,28 @@
+@import "utilities/vars";
+@import "navbar";
+@import "pages/homepage";
+@import "pages/signInUp";
+@import "pages/timeline";
+@import "pages/newMessage";
+@import "responsive";
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900');
+
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: $bg-color;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.title-gen-style {
+  font-weight: 800;
+  color: $title-text-color;
+}
+
+a.btn.btn-danger,
+a.btn.btn-danger:hover {
+  color: $btn-text-color;
+}
+

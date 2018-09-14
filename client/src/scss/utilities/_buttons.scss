@@ -1,0 +1,12 @@
+@import "vars";
+
+.btn {
+  border-radius: 20px;
+  color: $btn-text-color;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: $btn-text-color;
+  }
+}

@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700,900");
+.navbar {
+  margin-bottom: 4rem; }
+  .navbar a {
+    font-weight: bold;
+    color: white;
+    margin-right: 10px; }
+    .navbar a:hover {
+      color: white;
+      text-decoration: underline;
+      cursor: pointer; }
+
+.navbar-brand > img {
+  /* > is the direct descendant selector */
+  display: inline-block;
+  /* so we can add some width an height */
+  width: 1.5em;
+  border-radius: 2px;
+  margin: 5px 15px; }
+
+ul.nav.navbar-nav li {
+  margin: 0 0.5rem; }
+
+.onboarding > .navbar {
+  padding: 0;
+  background: #3E4788; }
+
+.btn {
+  border-radius: 20px;
+  color: white;
+  border: none; }
+  .btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: white; }
+
+/* Mid */
+@media only screen and (max-width: 1100px) {
+  .home-hero {
+    background-attachment: fixed;
+    background-position: unset; } }
+/* Mobile */
+@media only screen and (max-width: 450px) {
+  .welcome-signup-message {
+    margin-top: 120px;
+    margin-left: 30px; }
+    .welcome-signup-message h1 {
+      font-size: 40px; }
+    .welcome-signup-message h4 {
+      font-size: 1rem; } }
+.home-hero {
+  width: 100vw;
+  height: 100vh;
+  /* Position homepage content at the top left corner of the page */
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* Text style */
+  color: white;
+  /* Cover image style */
+  background-image: url("../images/signed-out-home.jpg");
+  z-index: -1;
+  /*sending to background - so it won't cover the navbar*/
+  background-position: center center;
+  /* X Y position*/
+  background-size: cover; }
+
+.welcome-signup-message {
+  margin-top: 120px;
+  margin-left: 70px; }
+  .welcome-signup-message h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #3E4788; }
+  .welcome-signup-message h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    color: deeppink;
+    margin-top: 25px;
+    margin-bottom: 60px; }
+  .welcome-signup-message .btn {
+    padding: 10px 40px;
+    font-weight: bold;
+    background: #3E4788; }
+
+label {
+  margin-top: 10px;
+  font-weight: 700; }
+
+.btn-form-style {
+  margin-top: 15px;
+  padding: 7px 50px;
+  background: #3E4788; }
+
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 7px 20px 12px;
+  margin-top: 5px; }
+
+/* messages:not(.no-hover) means that messages does NOT have the class of 'no-hover' */
+#messages:not(.no-hover) .list-group-item:hover {
+  background-color: #e6ecf0; }
+
+.timeline-image {
+  border-radius: 50px;
+  height: 48px;
+  width: 48px;
+  margin: 2px 30px 10px 10px; }
+
+.img-thumbnail {
+  margin-top: 5px; }
+
+.btn {
+  border-radius: 20px;
+  color: white;
+  border: none; }
+  .btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: white; }
+
+label {
+  margin-top: 10px;
+  font-weight: 700; }
+
+.btn-form-style {
+  margin-top: 15px;
+  padding: 7px 50px;
+  background: #3E4788; }
+
+#message {
+  margin-top: 40px;
+  margin-bottom: 20px; }
+
+/* Mid */
+@media only screen and (max-width: 1100px) {
+  .home-hero {
+    background-attachment: fixed;
+    background-position: unset; } }
+/* Mobile */
+@media only screen and (max-width: 450px) {
+  .welcome-signup-message {
+    margin-top: 120px;
+    margin-left: 30px; }
+    .welcome-signup-message h1 {
+      font-size: 40px; }
+    .welcome-signup-message h4 {
+      font-size: 1rem; } }
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #FFF4EE;
+  word-break: break-word;
+  hyphens: auto; }
+
+.title-gen-style {
+  font-weight: 800;
+  color: #3E4788; }
+
+a.btn.btn-danger,
+a.btn.btn-danger:hover {
+  color: white; }
+
+/*# sourceMappingURL=main.css.map */
