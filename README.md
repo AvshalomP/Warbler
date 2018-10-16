@@ -1,6 +1,6 @@
 # Warbler
 
-> A fullstack web application based on Node.js and React.js 
+> A fullstack web application based on Node.js, React.js and Redux, which is a simple Twitter clone.
 
 ## Live Demo
 
