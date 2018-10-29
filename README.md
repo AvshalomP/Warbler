@@ -20,7 +20,9 @@ To see the app in action, go to [Warbler](https://warbler-client-ap.herokuapp.co
 
 * Manage messages with basic functionalities:
 
-  * Delete messages  
+  * add message
+  
+  * Delete message
 
 * Responsive web design
 
