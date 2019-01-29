@@ -14,13 +14,13 @@ To see the app in action, go to [Warbler](https://warbler-client-ap.herokuapp.co
 
 * Authorization:
 
-  * One cannot manage messages without being authenticated
+  * One cannot manage messages without being authorized
 
   * One cannot delete messages created by other users
 
 * Manage messages with basic functionalities:
 
-  * add message
+  * Add message
   
   * Delete message
 
@@ -42,7 +42,7 @@ git clone https://github.com/AvshalomP/Warbler.git
 > For both client & server folders
 
 ```sh
-npm install
+npm i
 ```
 
 ### Comments in code
@@ -55,17 +55,17 @@ Some comments in the source code are self notes and therefore might not seem nec
 
 * [React](https://reactjs.org)
 * [Redux](https://redux.js.org)
-* [Bootstrap](https://getbootstrap.com/docs/4.1/)
+* [Axios](https://github.com/axios/axios)
 
 ### Back-end
 
+* [Node.js](https://nodejs.org/en/docs/)
 * [express](https://expressjs.com/)
 * [mongoDB](https://www.mongodb.com/)
 * [mongoose](http://mongoosejs.com/)
 * [jwt](https://jwt.io)
 * [bicrypto](https://www.npmjs.com/package/bcrypt)
 * [moment](https://momentjs.com/)
-* [Axios](https://github.com/axios/axios)
 * [cors](https://www.npmjs.com/package/cors)
 
 ### Testing
