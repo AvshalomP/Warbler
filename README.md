@@ -14,7 +14,7 @@ To see the app in action, go to [Warbler](https://warbler-client-ap.herokuapp.co
 
 * Authorization:
 
-  * One cannot manage messages without being authorized
+  * One cannot manage messages without being authenticated
 
   * One cannot delete messages created by other users
 
@@ -64,7 +64,7 @@ Some comments in the source code are self notes and therefore might not seem nec
 * [mongoDB](https://www.mongodb.com/)
 * [mongoose](http://mongoosejs.com/)
 * [jwt](https://jwt.io)
-* [bicrypto](https://www.npmjs.com/package/bcrypt)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
 * [moment](https://momentjs.com/)
 * [cors](https://www.npmjs.com/package/cors)
 
